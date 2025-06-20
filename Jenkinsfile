@@ -2,7 +2,7 @@ pipeline {
     //agent { docker { image 'php:8.4.8-alpine3.22' } }
     agent {
   docker {
-    image 'php:8.4.8-windowsservercore'  // Windows container
+    image 'php:8.2.8-windowsservercore-ltsc2022'  // Windows container
     args '-v C:\\ProgramData\\Jenkins\\workspace:C:\\workspace'  // Windows volume mount
           }
             }
