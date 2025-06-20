@@ -1,15 +1,9 @@
 pipeline {
-    //agent { docker { image 'php:8.4.8-alpine3.22' } }
-    agent {
-  docker {
-    image 'php:8.2.8-windowsservercore-ltsc2022'  // Windows container
-    args '-v C:\\ProgramData\\Jenkins\\workspace:C:\\workspace'  // Windows volume mount
-          }
-            }
+    agent { docker { image 'maven:3.9.9-eclipse-temurin-21-alpine' } }
     stages {
         stage('build') {
             steps {
-                sh 'php --version'
+                sh 'mvn --version'
             }
         }
     }
